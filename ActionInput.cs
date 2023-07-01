@@ -1,6 +1,6 @@
 using System;
 using CommandLine; //  nuget package for processing command line arguments
-namespace Demo.Action;
+namespace DotNet.GitHubAction;
 // class for getting action inputs 
 public class ActionInputs
 {
