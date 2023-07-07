@@ -1,5 +1,5 @@
 # Set the base image as the .NET 7.0 SDK (this includes the runtime)
-FROM mcr.microsoft.com/dotnet/runtime:7.0
+FROM mcr.microsoft.com/dotnet/sdk:7.0 as build-env
 
 # Copy everything and publish the release (publish implicitly restores and builds)
 WORKDIR /app
@@ -20,7 +20,7 @@ LABEL com.github.actions.description=".NET 7 based image for printing release su
 LABEL com.github.actions.icon="activity"
 LABEL com.github.actions.color="orange"
 
-# Relayer the .NET SDK, anew with the build output
-FROM mcr.microsoft.com/dotnet/sdk:7.0
+# Relayer the .NET SDK, anew with the build output - final image only contain dotnet runtime
+FROM mcr.microsoft.com/dotnet/runtime:7.0
 COPY --from=build-env /app/out .
 ENTRYPOINT [ "dotnet", "/DotNet.GitHubAction.dll" ]
