@@ -1,3 +1,4 @@
+/workspaces/github_action_dotnet/publish/release.md
 /workspaces/github_action_dotnet/publish/DotNet.GitHubAction
 /workspaces/github_action_dotnet/publish/DotNet.GitHubAction.dll
 /workspaces/github_action_dotnet/publish/DotNet.GitHubAction.deps.json
