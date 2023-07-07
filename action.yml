@@ -19,8 +19,9 @@ outputs:
     description:
       'A boolean value, indicating whether or not the action updated metrics.'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'dotnet'. # docker if using container
+ # image: 'Dockerfile'
+  using: 'publish/DotNet.GitHubAction.dll' 
   args:
   - '-o'
   - ${{ inputs.owner }}
