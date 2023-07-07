@@ -21,6 +21,6 @@ LABEL com.github.actions.icon="activity"
 LABEL com.github.actions.color="orange"
 
 # Relayer the .NET SDK, anew with the build output - final image only contain dotnet runtime
-FROM mcr.microsoft.com/dotnet/runtime:7.0
+FROM mcr.microsoft.com/dotnet/sdk:7.0
 COPY --from=build-env /app/out .
 ENTRYPOINT [ "dotnet", "/DotNet.GitHubAction.dll" ]
