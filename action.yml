@@ -19,7 +19,7 @@ outputs:
     description:
       'A boolean value, indicating whether or not the action updated metrics.'
 runs:
-  using: 'dotnet'. # docker if using container
+  using: 'dotnet' # docker if using container
  # image: 'Dockerfile'
   using: 'publish/DotNet.GitHubAction.dll' 
   args:
