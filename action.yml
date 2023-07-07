@@ -21,7 +21,7 @@ outputs:
 runs:
   using: 'dotnet' # docker if using container
  # image: 'Dockerfile'
-  using: 'publish/DotNet.GitHubAction.dll' 
+  main: 'publish/DotNet.GitHubAction.dll' 
   args:
   - '-o'
   - ${{ inputs.owner }}
