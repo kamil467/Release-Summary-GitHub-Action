@@ -7,14 +7,14 @@ COPY . ./
 RUN dotnet publish ./DotNet.GitHubAction/DotNet.GitHubAction.csproj -c Release -o out --no-self-contained
 
 # Label the container
-LABEL maintainer="David Pine <david.pine@microsoft.com>"
-LABEL repository="https://github.com/dotnet/samples"
-LABEL homepage="https://github.com/dotnet/samples"
+LABEL maintainer="Kamil Hussain <kamil467@gmail.com>"
+LABEL repository="https://github.com/kamil467/github_action_dotnet"
+LABEL homepage="https://github.com/kamil467/github_action_dotnet"
 
 # Label as GitHub action
-LABEL com.github.actions.name="The name of your GitHub Action"
+LABEL com.github.actions.name="github-release-summary"
 # Limit to 160 characters
-LABEL com.github.actions.description="The description of your GitHub Action."
+LABEL com.github.actions.description=".NET 7 based image for printing release summary in github action workflow."
 # See branding:
 # https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions#branding
 LABEL com.github.actions.icon="activity"
