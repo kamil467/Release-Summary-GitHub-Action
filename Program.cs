@@ -18,6 +18,8 @@ parser.WithNotParsed(
         Environment.Exit(2);
     }).WithParsed( inputs =>{
         Console.WriteLine($" Owner is : Name is {inputs.Owner}");
+
+        Environment.Exit(0);
     });
 
 await host.RunAsync();
