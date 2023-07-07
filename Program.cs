@@ -17,7 +17,7 @@ parser.WithNotParsed(
 
         Environment.Exit(2);
     }).WithParsed( inputs =>{
-        Console.WriteLine($" This is from container : Name is {inputs.Name}");
+        Console.WriteLine($" Owner is : Name is {inputs.Owner}");
     });
 
 await host.RunAsync();
