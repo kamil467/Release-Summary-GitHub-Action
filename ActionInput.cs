@@ -20,6 +20,11 @@ public class ActionInputs
         HelpText = "The owner, for example: \"dotnet\". Assign from `github.repository_owner`.")]
     public string Owner { get; set; } = null!;
 
+    [Option('r', "releasae",
+        Required = true,
+        HelpText = "release name for example - v1, v2 .")]
+    public string Release { get; set; } = null!;
+
 
     static void ParseAndAssign(string? value, Action<string> assign)
     {

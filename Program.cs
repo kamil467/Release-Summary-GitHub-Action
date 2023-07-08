@@ -44,23 +44,31 @@ static async ValueTask PrintReleaseSummaryAsync(ActionInputs inputs, IHost host)
           line = sr.ReadToEnd();
           Console.WriteLine(line);
     }
-    //Read the first line of text
-  
-    //Continue to read until you reach end of file
     
-    //close the file
+    // replace release version
+    line = line.Replace("{{release}}",inputs.Release);
+    line = line.Replace("{{author}}",inputs.Owner);
+    
+    string outputFile = "release.md";
+    if (File.Exists(outputFile))    
+    {    
+        File.Delete(outputFile);    
+    }    
+    
 
-    var gitHubOutputFile = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
-    if (!string.IsNullOrWhiteSpace(gitHubOutputFile))
-    {
-        using StreamWriter textWriter = new(gitHubOutputFile, true, Encoding.UTF8);
-        textWriter.WriteLine($"summary-details={line}");
-    }
+    // Create a new file     
+    using (FileStream fs = File.Create(outputFile))     
+    {    
+        // Add some text to file    
+        Byte[] summarContent = new UTF8Encoding(true).GetBytes(line);    
+        fs.Write(summarContent, 0, summarContent.Length); 
+    } 
 
 }
 catch(Exception e)
 {
     Console.WriteLine("Exception: " + e.Message);
+    Environment.Exit(1);
 }
 
         await ValueTask.CompletedTask;
