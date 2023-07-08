@@ -15,7 +15,11 @@
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
 </ItemGroup>
-<ItemGroup>
+<!--<ItemGroup>
   <Content Include="release.md" CopyToPublishDirectory="Always" />
+</ItemGroup> -->
+<ItemGroup>
+  <EmbeddedResource Include="release.md" />
+  <EmbeddedResource Include="data.json" />
 </ItemGroup>
 </Project>

@@ -1,3 +1,5 @@
+using System.Reflection;
+
 using IHost host = Host.CreateDefaultBuilder(args)
     //.ConfigureServices((_, services) => services.AddGitHubActionServices())
     .Build();
@@ -31,18 +33,22 @@ static async ValueTask PrintReleaseSummaryAsync(ActionInputs inputs, IHost host)
         try
       {
     //Pass the file path and file name to the StreamReader constructor
-    StreamReader sr = new StreamReader("release.md");
-    //Read the first line of text
-    line = sr.ReadLine();
-    //Continue to read until you reach end of file
-    while (line != null)
-    {
-        //Read the next line
-        Console.WriteLine(line);
-        line = sr.ReadLine();
+    var assembly = Assembly.GetExecutingAssembly();
+
+    string resourcePath = "demo_action.release.md";
+
+    using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
+
+    
+    using(StreamReader sr = new StreamReader(stream)){
+          line = sr.ReadToEnd();
+          Console.WriteLine(line);
     }
+    //Read the first line of text
+  
+    //Continue to read until you reach end of file
+    
     //close the file
-    sr.Close();
 
     var gitHubOutputFile = Environment.GetEnvironmentVariable("GITHUB_OUTPUT");
     if (!string.IsNullOrWhiteSpace(gitHubOutputFile))

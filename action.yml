@@ -20,7 +20,7 @@ outputs:
       'A boolean value, indicating whether or not the action updated metrics.'
 runs:
   using: 'docker' # docker if using container
-  image: 'docker://kamil1993/github-release-summary-action:v5'
+  image: 'docker://kamil1993/github-release-summary-action:v6'
   # main: 'publish/DotNet.GitHubAction.dll' 
   args:
   - '-o'
