@@ -29,3 +29,5 @@ runs:
   args:
   - '-o'
   - ${{ inputs.owner }}
+  - '-r'
+  - ${{inputs.release}}
