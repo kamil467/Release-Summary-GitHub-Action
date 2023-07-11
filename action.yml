@@ -4,10 +4,6 @@ branding:
   icon: activity
   color: orange
 inputs:
-  owner:
-    description:
-      'The owner of the repo. Assign from github.repository_owner. Example, "dotnet".'
-    required: true
   release:
     description: 'Release name/ Tag Name'
     required: true
@@ -24,10 +20,8 @@ outputs:
       'A boolean value, indicating whether or not the action updated metrics.'
 runs:
   using: 'docker' # docker if using container
-  image: 'docker://kamil1993/github-release-summary-action:v7'
+  image: 'docker://kamil1993/github-release-summary-action:v8'
   # main: 'publish/DotNet.GitHubAction.dll' 
   args:
-  - '-o'
-  - ${{ inputs.owner }}
   - '-r'
   - ${{inputs.release}}

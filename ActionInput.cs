@@ -26,8 +26,8 @@ public class ActionInputs
 
         if(Environment.GetEnvironmentVariable("GITHUB_REPO_READ_TOKEN") is { Length: > 0} accessToken)
           this.AccessToken = accessToken;
-          else 
-          this.AccessToken =""; // remove after testing
+          // else 
+          // this.AccessToken =""; // remove after testing
 
     }
 
