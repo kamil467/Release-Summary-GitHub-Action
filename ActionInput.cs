@@ -8,15 +8,15 @@ public class ActionInputs
     public ActionInputs()
     {
         if (Environment.GetEnvironmentVariable("GITHUB_REPOSITORY") is { Length: > 0 } repoName)
-          this.RepoName = repoName;
-        else
-         this.RepoName = "devops_playground";  // remove after testing 
+          this.RepoName = "devops-playground";
+          else
+           this.RepoName = "devops-playground";  // remove after testing 
 
         // read commit sha from environment variable.
         if(Environment.GetEnvironmentVariable("GITHUB_SHA") is {Length: > 0} commitsha)
              this.CommitId = commitsha;
              else 
-             this.CommitId = ""; 
+             this.CommitId = "496b359d9a34838e58a002c02b684901c94aaf30"; 
 
         if(Environment.GetEnvironmentVariable("GITHUB_REPOSITORY_OWNER") is { Length: > 0} repoOwner)
           this.Owner = repoOwner;
