@@ -1,4 +1,6 @@
 using System.Reflection;
+using Octokit;
+
 
 using IHost host = Host.CreateDefaultBuilder(args)
     //.ConfigureServices((_, services) => services.AddGitHubActionServices())
@@ -7,28 +9,26 @@ using IHost host = Host.CreateDefaultBuilder(args)
 static TService Get<TService>(IHost host)
     where TService : notnull =>
     host.Services.GetRequiredService<TService>();
-
 var parser = Default.ParseArguments<ActionInputs>(() => new(), args);
 parser.WithNotParsed(
-    errors =>
+   errors =>
     {
         Get<ILoggerFactory>(host)
             .CreateLogger("DotNet.GitHubAction.Program")
             .LogError(
                 string.Join(Environment.NewLine, errors.Select(error => error.ToString())));
 
-        Environment.Exit(2);
+         Environment.Exit(2);
     }).WithParsed( async inputs =>{
-       
-       await PrintReleaseSummaryAsync(inputs,host);
+           
+       var listOfPr = await GetAssociatedPullRequest(inputs);
+       await PrintReleaseSummaryAsync(inputs,host, listOfPr);
 
     });
 
-static async ValueTask PrintReleaseSummaryAsync(ActionInputs inputs, IHost host)
+static async ValueTask PrintReleaseSummaryAsync(ActionInputs inputs, IHost host, IEnumerable<dynamic> listOfPr)
 {
-  
- //    
-        
+    
         string line = null;
         try
       {
@@ -48,6 +48,15 @@ static async ValueTask PrintReleaseSummaryAsync(ActionInputs inputs, IHost host)
     // replace release version
     line = line.Replace("{{release}}",inputs.Release);
     line = line.Replace("{{author}}",inputs.Owner);
+     
+     var prContent = "";
+     foreach(var pr in listOfPr)
+     {
+         prContent = ""
+
+     }
+
+    line = line.Replace("{{pr}}")
     
     string outputFile = "release.md";
     if (File.Exists(outputFile))    
@@ -77,6 +86,26 @@ catch(Exception e)
 
 }
 
+
+static async Task<IEnumerable<dynamic>> GetAssociatedPullRequest(ActionInputs inputs)
+{
+    var tokenAuth = new Credentials(inputs.AccessToken); // This can be a PAT or an OAuth token.
+
+     var client = new GitHubClient(new Octokit.ProductHeaderValue("github_release_summary_pull_request"));
+     client.Credentials = tokenAuth;
+      var query = await client
+                             .Repository
+                             .Commit
+                             .PullRequests(owner:inputs.Owner, name: inputs.RepoName, sha1: inputs.CommitId);
+
+     return  query.Select(pr => new {
+               
+               PRquestURL = pr.Url,
+               Body = pr.Body,
+               Title = pr.Title,
+               State = pr.State,
+             }).ToList();                             
+}
 
 
 await host.RunAsync();
