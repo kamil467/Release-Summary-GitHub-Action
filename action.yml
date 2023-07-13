@@ -1,5 +1,5 @@
-name: 'The title of your GitHub Action'
-description: 'The description of your GitHub Action'
+name: 'Print Release Summary MarkDown/Step Summary'
+description: '.NET based action for printing release summary in markdown format and set github_step_summary environment variable'
 branding:
   icon: activity
   color: orange
@@ -7,20 +7,9 @@ inputs:
   release:
     description: 'Release name/ Tag Name'
     required: true
-
-outputs:
-  summary-title:
-    description:
-      'The title of the code metrics action.'
-  summary-details:
-    description:
-      'A detailed summary of all the projects that were flagged.'
-  updated-metrics:
-    description:
-      'A boolean value, indicating whether or not the action updated metrics.'
 runs:
   using: 'docker' # docker if using container
-  image: 'docker://kamil1993/github-release-summary-action:v8'
+  image: 'docker://kamil1993/github-release-summary-action:v10'
   # main: 'publish/DotNet.GitHubAction.dll' 
   args:
   - '-r'

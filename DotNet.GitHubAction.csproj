@@ -3,7 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>demo_action</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -20,7 +19,6 @@
   <Content Include="release.md" CopyToPublishDirectory="Always" />
 </ItemGroup> -->
 <ItemGroup>
-  <EmbeddedResource Include="release.md" />
-  <EmbeddedResource Include="data.json" />
+  <EmbeddedResource Include="Template/release-summary.md" />
 </ItemGroup>
 </Project>
