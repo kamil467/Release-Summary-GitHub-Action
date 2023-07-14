@@ -9,7 +9,7 @@ inputs:
     required: true
 runs:
   using: 'docker' # docker if using container
-  image: 'docker://kamil1993/github-release-summary-action:v10'
+  image: 'docker://kamil1993/github-release-summary-action:v1'
   # main: 'publish/DotNet.GitHubAction.dll' 
   args:
   - '-r'
