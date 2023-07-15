@@ -12,8 +12,7 @@ Customized Step Summary report for workflow run. It will print the summary in fo
 
 ### How to use this in Workflow Action.
 ```
-                 - name: Release Summary    
-                   id: dotnet-code-metrics         
+                 - name: Release Summary            
                    uses: kamil467/release-summary-github-action@main     
                    env:   
                       GITHUB_REPO_READ_TOKEN: ${{ secrets.GITHUB_TOKEN }}
