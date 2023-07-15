@@ -11,33 +11,6 @@
           "lib/netstandard2.0/CommandLine.dll": {}
         }
       },
-      "Dawn.Guard/1.11.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Dawn.Guard.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Dawn.Guard.dll": {}
-        }
-      },
-      "MarkdownBuilder/0.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Dawn.Guard": "1.11.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MarkdownBuilder.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MarkdownBuilder.dll": {}
-        }
-      },
-      "Microsoft.CodeAnalysis.Metrics/3.3.0": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.CodeAnalysis.Metrics.targets": {}
-        }
-      },
       "Microsoft.Extensions.Configuration/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -435,6 +408,15 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Octokit/7.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Octokit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Octokit.dll": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -540,106 +522,6 @@
         "lib/net45/CommandLine.dll",
         "lib/net461/CommandLine.dll",
         "lib/netstandard2.0/CommandLine.dll"
-      ]
-    },
-    "Dawn.Guard/1.11.0": {
-      "sha512": "vDMke3ME9HNI+s5t0gR3F995CegkVsilspecET0mD60ir8Tp/K1Rn6RlEW1FBVaKmn9LjjYXTgcd61XFQ7LRPg==",
-      "type": "package",
-      "path": "dawn.guard/1.11.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "dawn.guard.1.11.0.nupkg.sha512",
-        "dawn.guard.nuspec",
-        "lib/netstandard1.0/Dawn.Guard.dll",
-        "lib/netstandard2.0/Dawn.Guard.dll"
-      ]
-    },
-    "MarkdownBuilder/0.2.0": {
-      "sha512": "t06d0HKAR2kibI5hM3KTTW1Jt/G0T/KKqrm32D8zYAWDPrOXO4R0ajYs6LCsHxz12WUPFQPc3idWOMTGfub67g==",
-      "type": "package",
-      "path": "markdownbuilder/0.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/MarkdownBuilder.dll",
-        "markdownbuilder.0.2.0.nupkg.sha512",
-        "markdownbuilder.nuspec"
-      ]
-    },
-    "Microsoft.CodeAnalysis.Metrics/3.3.0": {
-      "sha512": "aiPgJecWPkwTZ18hkkPHPjNhXAoEuIF2MAATXYh1g/JdqH6I8ltyS2+d/n7EHNeL6S45Eu3HIyK6gUqcIncTRQ==",
-      "type": "package",
-      "path": "microsoft.codeanalysis.metrics/3.3.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "EULA.rtf",
-        "Metrics.Legacy/Metrics.Legacy.exe",
-        "Metrics.Legacy/Metrics.Legacy.exe.config",
-        "Metrics.Legacy/Metrics.Legacy.xml",
-        "Metrics.Legacy/Microsoft.Build.Locator.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.CSharp.Features.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.CSharp.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.Features.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.FlowAnalysis.Utilities.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.VisualBasic.Features.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.Workspaces.dll",
-        "Metrics.Legacy/Microsoft.CodeAnalysis.dll",
-        "Metrics.Legacy/Microsoft.DiaSymReader.dll",
-        "Metrics.Legacy/System.Buffers.dll",
-        "Metrics.Legacy/System.Collections.Immutable.dll",
-        "Metrics.Legacy/System.Composition.AttributedModel.dll",
-        "Metrics.Legacy/System.Composition.Convention.dll",
-        "Metrics.Legacy/System.Composition.Hosting.dll",
-        "Metrics.Legacy/System.Composition.Runtime.dll",
-        "Metrics.Legacy/System.Composition.TypedParts.dll",
-        "Metrics.Legacy/System.Memory.dll",
-        "Metrics.Legacy/System.Numerics.Vectors.dll",
-        "Metrics.Legacy/System.Reflection.Metadata.dll",
-        "Metrics.Legacy/System.Runtime.CompilerServices.Unsafe.dll",
-        "Metrics.Legacy/System.Text.Encoding.CodePages.dll",
-        "Metrics.Legacy/System.Threading.Tasks.Extensions.dll",
-        "Metrics/Metrics.exe",
-        "Metrics/Metrics.exe.config",
-        "Metrics/Metrics.xml",
-        "Metrics/Microsoft.Build.Locator.dll",
-        "Metrics/Microsoft.CodeAnalysis.CSharp.Features.dll",
-        "Metrics/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
-        "Metrics/Microsoft.CodeAnalysis.CSharp.dll",
-        "Metrics/Microsoft.CodeAnalysis.Features.dll",
-        "Metrics/Microsoft.CodeAnalysis.FlowAnalysis.Utilities.dll",
-        "Metrics/Microsoft.CodeAnalysis.VisualBasic.Features.dll",
-        "Metrics/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
-        "Metrics/Microsoft.CodeAnalysis.VisualBasic.dll",
-        "Metrics/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
-        "Metrics/Microsoft.CodeAnalysis.Workspaces.dll",
-        "Metrics/Microsoft.CodeAnalysis.dll",
-        "Metrics/Microsoft.DiaSymReader.dll",
-        "Metrics/System.Buffers.dll",
-        "Metrics/System.Collections.Immutable.dll",
-        "Metrics/System.Composition.AttributedModel.dll",
-        "Metrics/System.Composition.Convention.dll",
-        "Metrics/System.Composition.Hosting.dll",
-        "Metrics/System.Composition.Runtime.dll",
-        "Metrics/System.Composition.TypedParts.dll",
-        "Metrics/System.Memory.dll",
-        "Metrics/System.Numerics.Vectors.dll",
-        "Metrics/System.Reflection.Metadata.dll",
-        "Metrics/System.Runtime.CompilerServices.Unsafe.dll",
-        "Metrics/System.Text.Encoding.CodePages.dll",
-        "Metrics/System.Threading.Tasks.Extensions.dll",
-        "ThirdPartyNotices.rtf",
-        "build/Microsoft.CodeAnalysis.Metrics.targets",
-        "microsoft.codeanalysis.metrics.3.3.0.nupkg.sha512",
-        "microsoft.codeanalysis.metrics.nuspec",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.Extensions.Configuration/6.0.0": {
@@ -1138,6 +1020,19 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Octokit/7.0.1": {
+      "sha512": "LS0xXFj94I1RL/m54ris9Yp5A8qCoJ2WyLOggSld6z9qH6B2JKoEwdizzqIRPPBQQ2Y2HvRXNYo8ZSPcx6emEA==",
+      "type": "package",
+      "path": "octokit/7.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Octokit.dll",
+        "octokit.7.0.1.nupkg.sha512",
+        "octokit.nuspec",
+        "octokit.png"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
       "type": "package",
@@ -1284,11 +1179,9 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "CommandLineParser >= 2.8.0",
-      "MarkdownBuilder >= 0.2.0",
-      "Microsoft.CodeAnalysis.Metrics >= 3.3.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
-      "Microsoft.Extensions.FileSystemGlobbing >= 6.0.0",
-      "Microsoft.Extensions.Hosting >= 6.0.1"
+      "Microsoft.Extensions.Hosting >= 6.0.1",
+      "Octokit >= 7.0.1"
     ]
   },
   "packageFolders": {
@@ -1332,25 +1225,17 @@
             "target": "Package",
             "version": "[2.8.0, )"
           },
-          "MarkdownBuilder": {
-            "target": "Package",
-            "version": "[0.2.0, )"
-          },
-          "Microsoft.CodeAnalysis.Metrics": {
-            "target": "Package",
-            "version": "[3.3.0, )"
-          },
           "Microsoft.Extensions.DependencyInjection.Abstractions": {
-            "target": "Package",
-            "version": "[6.0.0, )"
-          },
-          "Microsoft.Extensions.FileSystemGlobbing": {
             "target": "Package",
             "version": "[6.0.0, )"
           },
           "Microsoft.Extensions.Hosting": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "Octokit": {
+            "target": "Package",
+            "version": "[7.0.1, )"
           }
         },
         "imports": [

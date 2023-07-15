@@ -42,25 +42,17 @@
               "target": "Package",
               "version": "[2.8.0, )"
             },
-            "MarkdownBuilder": {
-              "target": "Package",
-              "version": "[0.2.0, )"
-            },
-            "Microsoft.CodeAnalysis.Metrics": {
-              "target": "Package",
-              "version": "[3.3.0, )"
-            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.Extensions.FileSystemGlobbing": {
               "target": "Package",
               "version": "[6.0.0, )"
             },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[6.0.1, )"
+            },
+            "Octokit": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             }
           },
           "imports": [
