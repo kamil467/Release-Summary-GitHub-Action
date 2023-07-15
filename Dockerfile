@@ -8,8 +8,8 @@ RUN dotnet publish DotNet.GitHubAction.csproj -c Release -o out --no-self-contai
 
 # Label the container
 LABEL maintainer="Kamil Hussain <kamil467@gmail.com>"
-LABEL repository="https://github.com/kamil467/github_action_dotnet"
-LABEL homepage="https://github.com/kamil467/github_action_dotnet"
+LABEL repository="https://github.com/kamil467/Release-Summary-GitHub-Action"
+LABEL homepage="https://github.com/kamil467/Release-Summary-GitHub-Action"
 
 # Label as GitHub action
 LABEL com.github.actions.name="github-release-summary"
