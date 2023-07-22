@@ -1,0 +1,23 @@
+name: 'Test security'
+on:
+  workflow_dispatch:
+
+jobs:
+  SCS:
+    runs-on: ubuntu-latest
+    steps:     
+      - uses: actions/checkout@v3
+      
+      - name: Set up projects
+        uses: security-code-scan/security-code-scan-add-action@v1.2
+
+      - name: Build
+        run: |
+          dotnet restore
+          dotnet build
+        
+      - name: Convert sarif for uploading to GitHub
+        uses: security-code-scan/security-code-scan-results-action@v1
+        
+      - name: Upload sarif	
+        uses: github/codeql-action/upload-sarif@v1
